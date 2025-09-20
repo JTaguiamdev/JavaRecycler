@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 Collections.swap(list, source, dest);
                 adapter.notifyItemMoved(source, dest);
                 adapter.notifyItemChanged(source);
-                return false;
+                return true;
             }
 
             @Override
