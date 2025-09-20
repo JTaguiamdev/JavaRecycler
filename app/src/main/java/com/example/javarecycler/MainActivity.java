@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -35,14 +36,17 @@ public class MainActivity extends AppCompatActivity {
             btnAdd = findViewById(R.id.button);
             adapter = new ItemAdapter(list, this);
             recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
             //
             btnAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String name = txtName.getText().toString();
-                    list.add(name);
-                    adapter.notifyDataSetChanged();
-
+                    String name = txtName.getText().toString().trim();
+                    if (!name.isEmpty()) {
+                        list.add(name);
+                        adapter.notifyDataSetChanged();
+                        txtName.setText("");
+                    }
                 }
             });
         ///
