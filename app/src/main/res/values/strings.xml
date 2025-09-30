@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Taguiam, Jasper P.
-    </string>
+    <string name="app_name">Taguiam, Jasper P.</string>
+    <string name="add">+</string>
+    <string name="cancel">CANCEL</string>
+    <string name="save">SAVE</string>
+    <string name="full_name">Full Name</string>
+    <string name="id_no">ID No</string>
+    <string name="course_and_year">Course and Year</string>
 </resources>

@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
-    Context context;
-    ArrayList<String> list;
-    LayoutInflater inflater;
+    private Context context;
+    private ArrayList<Student> studentList;
+    private LayoutInflater inflater;
 
-    public ItemAdapter(ArrayList<String> list, Context context) {
-        this.list = list;
+    public ItemAdapter(ArrayList<Student> studentList, Context context) {
+        this.studentList = studentList;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
     }
@@ -29,11 +29,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        holder.textView.setText(list.get(position).toUpperCase());
+        Student currentStudent = studentList.get(position);
+        holder.bind(currentStudent);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return studentList.size();
     }
 }
