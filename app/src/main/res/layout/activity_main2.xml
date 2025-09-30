@@ -93,7 +93,7 @@
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:background="@color/white"
             android:text="@string/cancel"
             android:paddingHorizontal="24dp" />
 
